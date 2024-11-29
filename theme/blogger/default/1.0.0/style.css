@@ -34,10 +34,10 @@ iframe:focus { outline: none; } iframe[seamless] { display: block; }
  * xxx://xxx.xxx.xxx/xxx
  */
 
-a { color: rgb(var(--font-anchor-color)); text-decoration: none; cursor: pointer; }
-a:hover { color: rgb(var(--font-anchor-color-hover)); }
-a:active { color: rgb(var(--font-anchor-color-active)); }
-a:visited { color: rgb(var(--font-anchor-color-visited)); }
+a { color: var(--font-anchor-color); text-decoration: none; cursor: pointer; }
+a:hover { color: var(--font-anchor-color-hover); }
+a:active { color: var(--font-anchor-color-active); }
+a:visited { color: var(--font-anchor-color-visited); }
 [class*='a:static'], [class*='a:static']:hover, [class*='a:static']:active, [class*='a:static']:visited { color: var(--font-anchor-color-static); }
 
 /**
