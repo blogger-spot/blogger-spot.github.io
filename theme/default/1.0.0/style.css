@@ -33,7 +33,7 @@ pre { font-family: var(--font-family-code); }
  * xxx://xxx.xxx.xxx/xxx
  */
 
-a { color: var(--font-anchor-color); text-decoration: none; cursor: pointer; }
+a { color: blue; text-decoration: none; cursor: pointer; }
 a:hover { color: var(--font-anchor-color-hover); }
 a:active { color: var(--font-anchor-color-active); }
 a:visited { color: var(--font-anchor-color-visited); }
