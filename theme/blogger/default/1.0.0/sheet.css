@@ -65,6 +65,7 @@
 --purple: 128, 0, 128; --purple-pop: 198, 120, 221;
 --pink: 255, 192, 203; --pink-pop: 255, 192, 203;
 --cyan: 0, 255, 255; --cyan-pop: 117, 181, 170;
+--blue-ray: #4285f4;
 }
 
 /**
@@ -81,11 +82,11 @@
 {
 --background-color: var(--white);
 --font-color: #333333;
---font-anchor-color: var(--blue-pop);
---font-anchor-color-focus: var(--blue-pop);
---font-anchor-color-active: var(--blue-pop);
---font-anchor-color-visited: var(--blue-pop);
---font-anchor-color-hover: var(--blue-pop);
+--font-anchor-color: var(--blue-ray);
+--font-anchor-color-focus: var(--blue-ray);
+--font-anchor-color-active: var(--blue-ray);
+--font-anchor-color-visited: var(--blue-ray);
+--font-anchor-color-hover: var(--blue-ray);
 --border-color: 204, 204, 204;
 --box-shadow: 60, 64, 67;
 --box-shadow-pop: 11, 20, 26;
