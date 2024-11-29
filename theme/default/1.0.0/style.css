@@ -22,6 +22,7 @@ ul { list-style-type: none; } li { list-style: none; }
 img { vertical-align: middle; }
 template { display: none; }
 pre { font-family: var(--font-family-code); }
+iframe:focus { outline: none; } iframe[seamless] { display: block; }
 
 /**
  * xxx
@@ -33,10 +34,10 @@ pre { font-family: var(--font-family-code); }
  * xxx://xxx.xxx.xxx/xxx
  */
 
-a { color: blue; text-decoration: none; cursor: pointer; }
-a:hover { color: var(--font-anchor-color-hover); }
-a:active { color: var(--font-anchor-color-active); }
-a:visited { color: var(--font-anchor-color-visited); }
+a { color: rgb(var(--font-anchor-color)); text-decoration: none; cursor: pointer; }
+a:hover { color: rgb(var(--font-anchor-color-hover)); }
+a:active { color: rgb(var(--font-anchor-color-active)); }
+a:visited { color: rgb(var(--font-anchor-color-visited)); }
 [class*='a:static'], [class*='a:static']:hover, [class*='a:static']:active, [class*='a:static']:visited { color: var(--font-anchor-color-static); }
 
 /**
@@ -200,3 +201,20 @@ a:visited { color: var(--font-anchor-color-visited); }
  *
  * xxx://xxx.xxx.xxx/xxx
  */
+
+/**
+ * ::state(webkit-scrollbar) { width: 3px; }
+ * ::state(webkit-scrollbar-track) { background-color: rgba(var(--white), 0); }
+ * ::state(webkit-scrollbar-thumb) { background-color: rgba(var(--black), 0.2); }
+ * ::state(webkit-scrollbar-thumb):hover { background-color: rgba(var(--black), 0.3); }
+ */
+
+/**
+ * ::--webkit-scrollbar { width: 3px; }
+ * ::--webkit-scrollbar-track { background-color: rgba(var(--white), 0); }
+ * ::--webkit-scrollbar-thumb { background-color: rgba(var(--black), 0.2); }
+ * ::--webkit-scrollbar-thumb:hover { background-color: rgba(var(--black), 0.3); }
+ */
+
+:disabled { opacity: 0.55; }
+::placeholder { color: darkgray; }
