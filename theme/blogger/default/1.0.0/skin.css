@@ -13,7 +13,9 @@
 .post-genre [rel='label'][name='china'],
 .post-genre [rel='label'][name='featured'],
 .post-genre [rel='label'][name='trending'],
+.post-genre [rel='label'][name='editor-choice'],
 .post-genre [rel='label'][name='top-global'],
+.post-genre [rel='label'][name='top-10'],
 .post-genre [rel='label'][name='*']
 { display: none; }
 .post-genre { display: flex; gap: 5px; font-size: 10px; font-weight: 500; }
