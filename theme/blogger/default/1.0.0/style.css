@@ -196,6 +196,51 @@ a:visited { color: var(--font-anchor-color-visited); }
  * xxx://xxx.xxx.xxx/xxx
  */
 
+:root {
+	--font-light-ultra: 100;
+	--font-light-medium: 200;
+	--font-light: 300;
+	--font-regular: 400;
+	--font-bold-pop: 500;
+	--font-bold-medium: 600;
+	--font-bold: 700;
+	--font-bold-ultra: 800;
+	--font-weight: 900;
+	}
+
+[class*="font"] {}
+
+[class*="font:normal"] { font-style: normal; }
+[class*="font:italic"] { font-style: italic; }
+[class*="font-light:ultra"] { font-weight: var(--font-light-ultra); }
+[class*="font-light:pop"] { font-weight: var(--font-light-pop); }
+[class*="font:light"], [class*="font-weight:light"] { font-weight: var(--font-light); }
+[class*="font:regular"] { font-weight: var(--font-regular); }
+[class*="font-bold:pop"] { font-weight: var(--font-bold-pop); }
+[class*="font-bold:medium"] { font-weight: var(--font-bold-medium); }
+[class*="font:bold"], [class*="font-weight:bold"] { font-weight: var(--font-bold); }
+[class*="font-bold:ultra"] { font-weight: var(--font-bold-ultra); }
+[class*="font:weight"] { font-weight: var(--font-weight); }
+
+[class*="font:size"] { font-size: var(--font-size); }
+[class*="font:lite"], [class*="font-size:lite"] { font-size: var(--font-lite); }
+[class*="font:tiny"], [class*="font-size:tiny"] { font-size: var(--font-tiny); }
+[class*="font:small"], [class*="font-size:small"] { font-size: var(--font-small); }
+[class*="font:intermediate"], [class*="font-size:intermediate"] { font-size: var(--font-intermediate); }
+[class*="font:medium"], [class*="font-size:medium"] { font-size: var(--font-medium); }
+[class*="font:large"], [class*="font-size:large"] { font-size: var(--font-large); }
+[class*="font:big"], [class*="font-size:big"] { font-size: var(--font-big); }
+
+/**
+ * xxx
+ *
+ * title
+ * description
+ * sub description
+ *
+ * xxx://xxx.xxx.xxx/xxx
+ */
+
 [print] { display: none; }
 [id="app:view"] { display: table; width: 100%; height: 100%; }
 [id="app:slot"] { display: table-row; width: 100%; height: 100%; }
