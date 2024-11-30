@@ -196,6 +196,34 @@ a:visited { color: var(--font-anchor-color-visited); }
  * xxx://xxx.xxx.xxx/xxx
  */
 
+[print] { display: none; }
+[id="app:view"] { display: table; width: 100%; height: 100%; }
+[id="app:slot"] { display: table-row; width: 100%; height: 100%; }
+[id="app:print"] { display: none; width: 100%; height: 100%; }
+[id="app:view-source"] { z-index: -1px; }
+#app { display: table-cell; width: 100%; height: 100%; }
+#application { width: 100%; height: 100%; }
+
+[device="computer"] {}
+[device="mobile"] {}
+[device="tablet"] {}
+[device="phone"] {}
+
+@media only screen and (orientation: landscape) {
+	[device="computer"] {}
+	[device="mobile"] {}
+	[device="tablet"] {}
+	[device="phone"] {}
+	}
+
+@media print {
+	#app { display: none !important; }
+	[id="app:print"] { display: table-cell; }
+	[no-print] { display: none !important; }
+	[print] { display: table-cell !important; }
+	* {}
+	}
+
 /**
  * the end
  *
