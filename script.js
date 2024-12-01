@@ -46,7 +46,15 @@ function owl_carousel_extra (element, reference, option) {
 		tmp [i].forEach (function (a) {
 			var id = $ (a).attr ('id');
 			var html = $ (a).html ();
-			html = html.split ('<div ajax="' + id + '"></div>').join ('dafuq');
+			var thumbnail_extra = [];
+			var extra = [];
+			if (ajax [id]) {
+				if (ajax [id].prop.rating) thumbnail_extra.push ("<div class='owl-carousel-thumbnail-rating'>" + ("<span class='material-symbol --round'></span>".repeat (ajax [id].prop.rating)) + "</div>");
+				if (ajax [id].video.length) thumbnail_extra.push ("<div class='owl-carousel-thumbnail-video-length'>" + ajax [id].video.length + "</div>");
+				if (ajax [id].title.origin) extra.push ("<div class='owl-carousel-title-origin'>" + ajax [id].title.origin + "</div>");
+				}
+			html = html.split ('<div thumbnail="' + id + '"></div>').join (thumbnail_extra.join (''));
+			html = html.split ('<div extra="' + id + '"></div>').join (extra.join (''));
 			child_each.push ("<div class='owl-carousel-item' id='" + id + "'>" + html + "</div>");
 			});
 		each.push ("<div class='owl-carousel-extra'>" + child_each.join ('') + "</div>");
@@ -55,23 +63,24 @@ function owl_carousel_extra (element, reference, option) {
 	owl_carousel (element, reference, option);
 	}
 
-var badai = function () {
-$.ajax ({
-url: 'https://blogger-spot.github.io/client/bioskop/drama.json?3',
-type: "GET",
-dataType: "json",
-complete: function (ajax) {
-var data = ajax.responseJSON;
-for (var i in data) {
-	if (data [i].id) {
-		if (data [i].id.length) {
-			var the = data [i];
-			for (var x in the.id) {
-				anjay [the.id [x]] = the;
+function owl_carousel_ajax (context) {
+	$.ajax ({
+		url: 'https://blogger-spot.github.io/client/bioskop/drama.json?3',
+		type: "GET",
+		dataType: "json",
+		complete: function (ajax) {
+			var data = ajax.responseJSON;
+			for (var i in data) {
+				if (data [i].id) {
+					if (data [i].id.length) {
+						var the = data [i];
+						for (var x in the.id) {
+							anjay [the.id [x]] = the;
+							}
+						}
+					}
 				}
+			context ();
 			}
-		}
+		});
 	}
-}
-});
-}
