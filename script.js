@@ -52,6 +52,8 @@ function owl_carousel_extra (element, reference, option) {
 				if (anjay [id].prop.rating) thumbnail_extra.push ("<div class='owl-carousel-thumbnail-rating'>" + ("<span class='material-symbol --round'>star</span>".repeat (anjay [id].prop.rating)) + "</div>");
 				if (anjay [id].video.length) thumbnail_extra.push ("<div class='owl-carousel-thumbnail-video-length'>" + anjay [id].video.length + "</div>");
 				if (anjay [id].title.origin) extra.push ("<div class='owl-carousel-title-origin'>" + anjay [id].title.origin + "</div>");
+				if (anjay [id].prop.episode.total && anjay [id].prop.episode.current) extra.push ("<div class='owl-carousel-episode'>Episode " + anjay [id].prop.episode.current + "/" + anjay [id].prop.episode.total + "</div>");
+				else if (anjay [id].prop.episode.total) extra.push ("<div class='owl-carousel-episode'>" + anjay [id].prop.episode.total + " Episode's</div>");
 				}
 			html = html.split ('<div thumbnail="' + id + '"></div>').join (thumbnail_extra.join (''));
 			html = html.split ('<div extra="' + id + '"></div>').join (extra.join (''));
