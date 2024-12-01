@@ -142,6 +142,57 @@ a:visited { color: var(--font-anchor-color-visited); }
  * xxx://xxx.xxx.xxx/xxx
  */
 
+:root {
+	--border-radius: 10px;
+	--border-radius-regular: 2px;
+	--border-radius-pop: 4px;
+	--border-radius-round: 100px;
+	--border-radius-circle: 100%;
+	--no-pixel: 0px;
+	--pixel: 1px;
+	--px: 10px;
+	--px-small: 5px;
+	--px-medium: 15px;
+	--px-large: 20px;
+	--px-big: 25px;
+	}
+
+.no-border, [class*="border:none"] { border: none; }
+.no-border-top, [class*="border-top:none"] { border-top: none; }
+.no-border-bottom, [class*="border-bottom:none"] { border-bottom: none; }
+.no-border-left, [class*="border-left:none"] { border-left: none; }
+.no-border-right, [class*="border-right:none"] { border-right: none; }
+
+.border { border-width: 1px; border-style: solid; border-color: rgb(var(--color)); }
+/*[class*="border:"] { border-width: 0px; border-style: solid; border-color: rgb(var(--color)); }
+[class*="border:null"] { border-width: 0px; }
+.border-size, [class*="border:size"] { border-width: 1px; }*/
+[class*="border:bold"] { border-width: 2px; }
+[class*="border-style:solid"], [class*="border:solid"] { border-style: solid; }
+[class*="border-style:dash"], [class*="border:dash"] { border-style: dashed; }
+[class*="border-style:dot"], [class*="border:dot"] { border-style: dotted; }
+
+.border-radius, [class*="border:radius"] { border-radius: var(--border-radius); }
+[class*="border-radius:regular"] { border-radius: var(--border-radius-regular); }
+[class*="border-radius:pop"] { border-radius: var(--border-radius-pop); }
+[class*="border-radius-pop::top"] { border-top-left-radius: var(--border-radius-pop); border-top-right-radius: var(--border-radius-pop); } [class*="border-radius-pop:top-left"] { border-top-left-radius: var(--border-radius-pop); } [class*="border-radius-pop:top-right"] { border-top-right-radius: var(--border-radius-pop); }
+[class*="border-radius-pop::bottom"] { border-bottom-left-radius: var(--border-radius-pop); border-bottom-right-radius: var(--border-radius-pop); } [class*="border-radius-pop:bottom-left"] { border-bottom-left-radius: var(--border-radius-pop); } [class*="border-radius-pop:bottom-right"] { border-bottom-right-radius: var(--border-radius-pop); }
+[class*="border-radius:round"] { border-radius: var(--border-radius-round); }
+[class*="border-radius:circle"] { border-radius: var(--border-radius-circle); }
+
+[class*="border:transparent"] { border-color: transparent; }
+[class*="border:color"] { border-color: rgb(var(--color)); }
+[class*="border-color:mono"] { border-color: rgb(var(--mono)); } [class*="border-color:mono-pop"] { border-color: rgb(var(--mono-pop)); } [class*="border-color:mono-extra"] { border-color: rgb(var(--mono-extra)); }
+[class*="border-color:red"] { border-color: rgb(var(--red)); } [class*="border-color:red-pop"] { border-color: rgb(var(--red-pop)); }
+[class*="border-color:green"] { border-color: rgb(var(--green)); } [class*="border-color:green-pop"] { border-color: rgb(var(--green-pop)); }
+[class*="border-color:blue"] { border-color: rgb(var(--blue)); } [class*="border-color:blue-pop"] { border-color: rgb(var(--blue-pop)); }
+
+[class*="border-gradient-color:ro"] { background: linear-gradient(white, white) padding-box, linear-gradient(20deg, red, orange) border-box; border-style: solid; border-color: transparent; }
+[class*="border-gradient-color:mb"] { background: linear-gradient(white, white) padding-box, linear-gradient(20deg, darkmagenta, lightblue) border-box; border-style: solid; border-color: transparent; }
+
+.box-shadow { box-shadow: 0px 1px 2px 0px rgba(var(--box-shadow), 0.3), 0px 1px 3px 1px rgba(var(--box-shadow), 0.15); }
+[class*="box-shadow:pop"] { box-shadow: 0px 2px 5px 0px rgba(var(--box-shadow-pop), 0.26), 0px 2px 10px 0px rgba(var(--box-shadow-pop), 0.16); }
+
 /**
  * xxx
  *
