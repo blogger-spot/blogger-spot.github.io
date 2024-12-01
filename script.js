@@ -48,10 +48,10 @@ function owl_carousel_extra (element, reference, option) {
 			var html = $ (a).html ();
 			var thumbnail_extra = [];
 			var extra = [];
-			if (ajax [id]) {
-				if (ajax [id].prop.rating) thumbnail_extra.push ("<div class='owl-carousel-thumbnail-rating'>" + ("<span class='material-symbol --round'></span>".repeat (ajax [id].prop.rating)) + "</div>");
-				if (ajax [id].video.length) thumbnail_extra.push ("<div class='owl-carousel-thumbnail-video-length'>" + ajax [id].video.length + "</div>");
-				if (ajax [id].title.origin) extra.push ("<div class='owl-carousel-title-origin'>" + ajax [id].title.origin + "</div>");
+			if (anjay [id]) {
+				if (anjay [id].prop.rating) thumbnail_extra.push ("<div class='owl-carousel-thumbnail-rating'>" + ("<span class='material-symbol --round'></span>".repeat (anjay [id].prop.rating)) + "</div>");
+				if (anjay [id].video.length) thumbnail_extra.push ("<div class='owl-carousel-thumbnail-video-length'>" + anjay [id].video.length + "</div>");
+				if (anjay [id].title.origin) extra.push ("<div class='owl-carousel-title-origin'>" + anjay [id].title.origin + "</div>");
 				}
 			html = html.split ('<div thumbnail="' + id + '"></div>').join (thumbnail_extra.join (''));
 			html = html.split ('<div extra="' + id + '"></div>').join (extra.join (''));
