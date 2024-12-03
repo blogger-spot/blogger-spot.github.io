@@ -90,3 +90,7 @@ function owl_carousel_ajax (context) {
 			}
 		});
 	}
+
+function element_blogger_href () {
+	return $ ('[href=https://www.blogger.com]');
+}
