@@ -1,0 +1,18 @@
+.post-genre [rel='label'][name='international'],
+.post-genre [rel='label'][name='asia'],
+.post-genre [rel='label'][name='indonesia'],
+.post-genre [rel='label'][name='korea'],
+.post-genre [rel='label'][name='japan'],
+.post-genre [rel='label'][name='china'],
+.post-genre [rel='label'][name='movie'],
+.post-genre [rel='label'][name='drama'],
+.post-genre [rel='label'][name='tv-show'],
+.post-genre [rel='label'][name='anime'],
+.post-genre [rel='label'][name='playlist'],
+.post-genre [rel='label'][name='featured'],
+.post-genre [rel='label'][name='trending'],
+.post-genre [rel='label'][name='editor-choice'],
+.post-genre [rel='label'][name='top-global'],
+.post-genre [rel='label'][name='top-10'],
+.post-genre [rel='label'][name='*']
+{ display: none; }
