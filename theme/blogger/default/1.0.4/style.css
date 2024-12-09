@@ -78,7 +78,7 @@ button:focus > section { display: flex; }
 .in-line { display: inline; }
 .block { display: block; } [class*='block:in-line'] { display: inline-block; }
 .table { display: table; } [class*='table:row'] { display: table-row; } [class*='table:cell'], [class*='table:column'] { display: table-cell; }
-.grid { display: grid; } .flex { display: flex; } [class*='flex:in-line'] { display: inline-flex; } [class*='flex:row'] { flex-direction: column; } [class*='flex:column'] { flex-direction: row; } .flex-wrap, [class*='flex:wrap'] { flex-wrap: wrap; } .flex-grow, [class*='flex:grow'] { flex-grow: 1; }
+.grid { display: grid; } .flex { display: flex; } [class*='flex:in-line'] { display: inline-flex; } .flex-row, [class*='flex:row'] { flex-direction: column; } [class*='flex:column'] { flex-direction: row; } .flex-wrap, [class*='flex:wrap'] { flex-wrap: wrap; } .flex-grow, [class*='flex:grow'] { flex-grow: 1; }
 
 .absolute { position: absolute; } .relative { position: relative; } .fixed { position: fixed; }
 .visible { visibility: visible; } .hidden { visibility: hidden; } .hide { display: none; visibility: hidden; width: 0; height: 0; } .none { display: none; }
