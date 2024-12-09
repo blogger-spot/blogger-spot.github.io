@@ -279,7 +279,7 @@ button:focus > section { display: flex; }
 [class*="font-bold:ultra"] { font-weight: var(--font-bold-ultra); }
 [class*="font:weight"] { font-weight: var(--font-weight); }
 
-[class*="font:size"] { font-size: var(--font-size); }
+[class*="font:size"], .font-size { font-size: var(--font-size); }
 [class*="font:lite"], [class*="font-size:lite"] { font-size: var(--font-lite); }
 [class*="font:tiny"], [class*="font-size:tiny"] { font-size: var(--font-tiny); }
 [class*="font:small"], [class*="font-size:small"] { font-size: var(--font-small); }
