@@ -111,3 +111,7 @@ function body_class () {
 	$ ('body').removeClass ('phone tablet mobile computer');
 	$ ('body').addClass (type);
 	}
+
+$ ('.phone').click (function () {
+	console.log (123)
+	})
