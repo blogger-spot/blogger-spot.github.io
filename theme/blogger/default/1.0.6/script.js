@@ -112,6 +112,7 @@ function body_class () {
 	$ ('body').addClass (type);
 	}
 
-$ ('.phone').click (function () {
-	console.log (123)
-	})
+function body_click (event) {
+	if ($ (event.target).is ('[id="menu:toggle"]') || $ (event.target).is ('[id="menu:toggle"] *')) $ ('#menu').css ('display', 'flex');
+	else if ($ ('#menu').css ('display') === 'flex') if (!$ (event.target).is ('.phone #blog > #main > #menu *')) $ ('#menu').css ('display', 'none');
+	}
