@@ -113,6 +113,8 @@ function body_class_extra () {
 	}
 
 function body_click (event) {
-	if ($ (event.target).is ('[id="menu:toggle"]') || $ (event.target).is ('[id="menu:toggle"] *')) $ ('#menu').css ('display', 'flex');
-	else if ($ ('#menu').css ('display') === 'flex') if (!$ (event.target).is ('.phone #blog > #main > #menu *')) $ ('#menu').css ('display', 'none');
+	if ($ ('body').hasClass ('phone')) {
+		if ($ (event.target).is ('[id="menu:toggle"]') || $ (event.target).is ('[id="menu:toggle"] *')) $ ('#menu').css ('display', 'flex');
+		else if ($ ('#menu').css ('display') === 'flex') if (!$ (event.target).is ('.phone #blog > #main > #menu *')) $ ('#menu').css ('display', 'none');
+		}
 	}
