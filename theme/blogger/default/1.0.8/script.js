@@ -118,3 +118,44 @@ function body_click (event) {
 		else if ($ ('#menu').css ('display') === 'flex') if (!$ (event.target).is ('.phone #blog > #main > #menu *')) $ ('#menu').css ('display', 'none');
 		}
 	}
+
+function button_section () {
+	$ ('button').focus (function (event) {
+		var ch = $ (event.target).children ('section.transition-opacity');
+		$ (event.target).blur (function () {
+			ch.removeClass ('transition-opacity-ex');
+			});
+		if (ch.css ('display') === 'flex') {
+			ch.addClass ('transition-opacity-ex');
+			}
+		});
+	}
+
+/*
+$ (document).ready (function () {
+	body_class ();
+	owl_carousel ('#owl-001', '#blog > #main > section', {
+		gap: 20,
+		responsive: {
+			0: {items: 2},
+			600: {items: 3},
+			1000: {items: 5},
+			},
+		});
+	});
+$ (window).on ('resize', function () {
+	body_class ();
+	});
+$ (document).click (function (event) {
+	body_click (event);
+	});
+$ ('button').focus (function (event) {
+	var ch = $ (event.target).children ('section.transition-opacity');
+	$ (event.target).blur (function () {
+		ch.removeClass ('transition-opacity-ex');
+		});
+	if (ch.css ('display') === 'flex') {
+		ch.addClass ('transition-opacity-ex');
+		}
+	});
+*/
