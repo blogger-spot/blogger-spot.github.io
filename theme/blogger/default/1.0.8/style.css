@@ -239,6 +239,9 @@ button:focus > section { display: flex; }
 [class*="border-gradient-color:ro"] { background: linear-gradient(white, white) padding-box, linear-gradient(20deg, red, orange) border-box; border-style: solid; border-color: transparent; }
 [class*="border-gradient-color:mb"] { background: linear-gradient(white, white) padding-box, linear-gradient(20deg, darkmagenta, lightblue) border-box; border-style: solid; border-color: transparent; }
 
+.icon-gradient { background: -webkit-linear-gradient(30deg,#333333,#aaaaaa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+[class*='icon-gradient:mono'] { background: -webkit-linear-gradient(30deg,#333333,#888888); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
 /**
  * xxx
  *
