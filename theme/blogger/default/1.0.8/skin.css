@@ -3,7 +3,7 @@
 --header-size: 65px;
 --menu-size: 250px;
 --side: 200px;
---form-search-size: 40px;
+--form-search-size: 50px;
 }
 
 #blogger { display: none; }
@@ -109,8 +109,8 @@
 .padding-a { padding: 3px 10px; }
 
 .computer #blog > #footer [id='footer:navigation'] { margin: 0px auto; width: 1000px; }
-.phone #header [id='a:logo'] .title { font-size: var(--font-size); }
-.phone #header [id='a:logo'] .description { font-size: var(--font-tiny); }
+/* .phone #header [id='a:logo'] .title { font-size: var(--font-size); } */
+/* .phone #header [id='a:logo'] .description { font-size: var(--font-tiny); } */
 .phone #blog > #main > #menu { display: none; position: fixed; top: calc(var(--header--size)+20px); left: 0px; height: calc(100vh - 70px); border-right: 1px solid gray; overflow: scroll; background-color: white; z-index: 10; }
 .phone #blog > #main > #menu:hover { display: flex; }
 .phone #blog > #main > #side { display: none; }
