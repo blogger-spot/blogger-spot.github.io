@@ -37,6 +37,7 @@
 --font-tiny: 8px;
 --font-small: 10px;
 --font-medium: 18px;
+--font-medium-large: 20px;
 --font-large: 24px;
 --font-big: 32px;
 }
@@ -122,6 +123,7 @@
 [theme='night']
 {
 --mono: 34, 34, 34;
+--mono-pop: 51, 51, 51;
 --background-color: #121212;
 --header-color: #101010;
 --font-color: #cccccc;
