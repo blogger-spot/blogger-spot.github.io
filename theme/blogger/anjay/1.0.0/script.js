@@ -4,18 +4,21 @@ function owl_carousel (element, reference, option) {
 	option = option || {}
 	var autoplay = false;
 	var auto_width = false;
+	var loop = true;
 	var nav = true;
 	var nav_dot = true;
 	if (option.play === "auto") autoplay = true;
 	if (option.width === "auto") auto_width = true;
 	if (option.nav === false) nav = false;
 	if (option.dot === false) nav_dot = false;
+	if ("loop" in option) loop = option.loop;
 	var oc = $ (element);
 	if (oc) {
 		oc.width ($ (reference).width () - (option.gap || 0) - 1);
 		oc.owlCarousel ({
 			onTranslated: option.on_translate || function () {},
-			loop: true,
+			loop,
+			center: option.center || false,
 			nav, dots: nav_dot,
 			autoplay,
 			margin: 10,
