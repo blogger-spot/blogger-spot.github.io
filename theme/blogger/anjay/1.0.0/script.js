@@ -82,7 +82,7 @@ function owl_carousel_extra (element, reference, option) {
 
 function owl_carousel_odbc (context) {
 	$.ajax ({
-		url: 'https://blogger-spot.github.io/db/bioskop/drama.json?' + Date.now (),
+		url: 'https://blogger-spot.github.io/client/bioskop/drama_001.json?' + Date.now (),
 		type: "GET",
 		dataType: "json",
 		complete: function (ajax) {
