@@ -1,4 +1,4 @@
-var anjay = {};
+$.odbc = {}
 
 function owl_carousel (element, reference, option) {
 	option = option || {}
@@ -17,6 +17,7 @@ function owl_carousel (element, reference, option) {
 		oc.width ($ (reference).width () - (option.gap || 0) - 1);
 		oc.owlCarousel ({
 			onTranslated: option.on_translate || function () {},
+			gap: (option.gap || 0) - 1,
 			loop,
 			center: option.center || false,
 			nav, dots: nav_dot,
@@ -79,19 +80,18 @@ function owl_carousel_extra (element, reference, option) {
 	owl_carousel (element, reference, option);
 	}
 
-function owl_carousel_ajax (context) {
+function owl_carousel_odbc (context) {
 	$.ajax ({
-		url: 'https://blogger-spot.github.io/client/bioskop/drama.json?' + Date.now (),
+		url: 'https://blogger-spot.github.io/db/bioskop/drama.json?' + Date.now (),
 		type: "GET",
 		dataType: "json",
 		complete: function (ajax) {
 			var data = ajax.responseJSON;
 			for (var i in data) {
-				if (data [i].id) {
-					if (data [i].id.length) {
-						var the = data [i];
-						for (var x in the.id) {
-							anjay [the.id [x]] = the;
+				if (data [i].permalink) {
+					if (data [i].permalink.length) {
+						for (var x in data [i].permalink) {
+							$.odbc [data [i].permalink [x]] = data [i];
 							}
 						}
 					}
@@ -113,7 +113,7 @@ function body_class () {
 function body_click (event) {
 	if ($ ('body').hasClass ('phone')) {
 		if ($ (event.target).is ('[id="menu:toggle"]') || $ (event.target).is ('[id="menu:toggle"] *')) $ ('#menu').css ('display', 'flex');
-		else if ($ ('#menu').css ('display') === 'flex') if (!$ (event.target).is ('.phone #blog > #main > #menu *')) $ ('#menu').css ('display', 'none');
+		else if ($ ('#menu').css ('display') === 'flex') if (!$ (event.target).is ('.phone #menu *')) $ ('#menu').css ('display', 'none');
 		}
 	}
 
@@ -127,6 +127,19 @@ function button_section () {
 			element.addClass ('transition-opacity-alpha');
 			}
 		});
+	}
+
+function theme_mode (color = '#98c379') {
+	if ($ ('body').attr ('theme') === 'night') {
+		$ ('#theme-mode-icon').css ('color', color).html ('toggle_on');
+		}
+	}
+
+function theme_mode_set (mode) {
+	theme_mode.style = mode || 'default';
+	$ ('body').attr ('theme', mode);
+	if (mode === 'default') $ ('#theme-mode-icon').css ('color', '#61aeef').html ('toggle_off');
+	if (mode === 'night') $ ('#theme-mode-icon').css ('color', '#98c379').html ('toggle_on');
 	}
 
 /*
