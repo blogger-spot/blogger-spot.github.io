@@ -2,6 +2,7 @@ $.odbc = {}
 
 function owl_carousel (element, reference, option) {
 	option = option || {}
+	var timeout = 5000;
 	var autoplay = false;
 	var auto_width = false;
 	var loop = true;
@@ -12,6 +13,7 @@ function owl_carousel (element, reference, option) {
 	if (option.nav === false) nav = false;
 	if (option.dot === false) nav_dot = false;
 	if ("loop" in option) loop = option.loop;
+	if ("timeout" in option) timeout = option.timeout;
 	var oc = $ (element);
 	if (oc) {
 		oc.width ($ (reference).width () - (option.gap || 0) - 1);
@@ -25,7 +27,7 @@ function owl_carousel (element, reference, option) {
 			margin: 10,
 			autoWidth: auto_width || false,
 			stagePadding: option.stage_padding || 0,
-			autoplayTimeout: 5000,
+			autoplayTimeout: timeout,
 			autoplayHoverPause: true,
 			responsive: option.responsive || {
 				0: {items: 1},
@@ -36,48 +38,41 @@ function owl_carousel (element, reference, option) {
 		}
 	}
 
-function owl_carousel_extra (element, reference, option) {
-	var data = $ (element);
-	var child = data.children ();
-	var child_length = child.length;
+function owl_carousel_group (element, reference, option, item) {
+	var data = $ (element).children ();
 	var tmp = {};
-	var each = [];
+	var group = [];
 	var j = 0, x = 0;
-	for (var i = 0; i < child_length; i ++) {
-		if (tmp [x]) tmp [x].push (child [i]);
-		else tmp [x] = [child [i]];
+	for (var i = 0; i < data.length; i ++) {
+		if (tmp [x]) tmp [x].push (data [i]);
+		else tmp [x] = [data [i]];
 		j ++;
-		if (j >= 20) {
+		if (j >= (item || 20)) {
 			x ++;
 			j = 0;
 			}
 		}
 	for (var i in tmp) {
-		var child_each = [];
-		tmp [i].forEach (function (a) {
-			var id = $ (a).attr ('id');
-			var html = $ (a).html ();
-			var thumbnail_extra = [];
-			var extra = [];
-			if (anjay [id]) {
-				if (anjay [id].prop.rating) thumbnail_extra.push ("<div class='owl-carousel-thumbnail-rating'>" + ("<span class='material-symbol --round'>star</span>".repeat (anjay [id].prop.rating)) + "</div>");
-				if (anjay [id].video.length) thumbnail_extra.push ("<div class='owl-carousel-thumbnail-video-length'>" + anjay [id].video.length + "</div>");
-				if (null) if (anjay [id].title.origin) extra.push ("<div class='owl-carousel-title-origin'>" + anjay [id].title.origin + "</div>");
-				if (anjay [id].type === "adult") {}
-				else if (anjay [id].type === "movie") extra.push ("<div class='owl-carousel-episode'></div>");
-				else if (anjay [id].type === "drama") {
-					if (anjay [id].prop.episode.total && anjay [id].prop.episode.current) extra.push ("<div class='owl-carousel-episode'>Episode " + anjay [id].prop.episode.current + "/" + anjay [id].prop.episode.total + "</div>");
-					else if (anjay [id].prop.episode.total) extra.push ("<div class='owl-carousel-episode'>" + anjay [id].prop.episode.total + " Episode's</div>");
-					}
+		var child = [];
+		tmp [i].forEach (function (e) {
+			var permalink = $ (e).attr ('permalink').toString ();
+			var html = $ (e).html ();
+			var odbc = $.odbc [permalink];
+			if (odbc) {
+				if (odbc.prop.rating) html = html.split ('<div class="owl-carousel-thumbnail-rating"></div>').join ("<div class='owl-carousel-thumbnail-rating'>" + (("<span class='icon:material'>star</span>").repeat (odbc.prop.rating)) + "</div>");
+				if (odbc.country) if (odbc.country.length) { var country = []; for (var i in odbc.country) country.push ("<img src='https://blogger-spot.github.io/image/flag/" + odbc.country [i] + ".jpg'/>"); html = html.split ('<div class="owl-carousel-thumbnail-country"></div>').join ("<div class='owl-carousel-thumbnail-country'>" + country.join ('') + "</div>"); }
+				if (odbc.video.quality) html = html.split ('<div class="owl-carousel-thumbnail-video-quality"></div>').join ("<div class='owl-carousel-thumbnail-video-quality'>" + odbc.video.quality + "</div>");
+				if (odbc.video.length) html = html.split ('<div class="owl-carousel-thumbnail-video-length"></div>').join ("<div class='owl-carousel-thumbnail-video-length'>" + odbc.video.length + "</div>");
+				console.log (html)
 				}
-			html = html.split ('<div thumbnail="' + id + '"></div>').join (thumbnail_extra.join (''));
-			html = html.split ('<div extra="' + id + '"></div>').join (extra.join (''));
-			child_each.push ("<div class='owl-carousel-item' id='" + id + "'>" + html + "</div>");
+			child.push ("<div class='owl-carousel-item' permalink='" + permalink + "'>" + html + "</div>");
 			});
-		each.push ("<div class='owl-carousel-extra'>" + child_each.join ('') + "</div>");
+		group.push ("<div class='owl-carousel-group'>" + child.join ('') + "</div>");
 		}
-	$ (element).html (each.join (''));
-	owl_carousel (element, reference, option);
+	$ (element).hide ();
+	var group_element = element + '-group';
+	$ (group_element).html (group.join (''));
+	owl_carousel (group_element, '#activity', {gap: 20, timeout: 30000, play: 'auto', nav: false, responsive: {0: {items: 1}, 1000: {items: 1}}});
 	}
 
 function owl_carousel_odbc (context) {
@@ -141,32 +136,3 @@ function theme_mode_set (mode) {
 	if (mode === 'default') $ ('#theme-mode-icon').css ('color', '#61aeef').html ('toggle_off');
 	if (mode === 'night') $ ('#theme-mode-icon').css ('color', '#98c379').html ('toggle_on');
 	}
-
-/*
-$ (document).ready (function () {
-	body_class ();
-	owl_carousel ('#owl-001', '#blog > #main > section', {
-		gap: 20,
-		responsive: {
-			0: {items: 2},
-			600: {items: 3},
-			1000: {items: 5},
-			},
-		});
-	});
-$ (window).on ('resize', function () {
-	body_class ();
-	});
-$ (document).click (function (event) {
-	body_click (event);
-	});
-$ ('button').focus (function (event) {
-	var ch = $ (event.target).children ('section.transition-opacity');
-	$ (event.target).blur (function () {
-		ch.removeClass ('transition-opacity-ex');
-		});
-	if (ch.css ('display') === 'flex') {
-		ch.addClass ('transition-opacity-ex');
-		}
-	});
-*/
