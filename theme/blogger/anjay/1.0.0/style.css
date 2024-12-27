@@ -347,24 +347,21 @@ button:focus > section { display: flex; }
 [class*='icon-variant:line'] { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
 
 .owl-carousel-container { display: flex; }
-.owl-carousel-group { display: grid; gap: 10px; grid-template-columns: 1fr 1fr 1fr 1fr; }
-.owl-carousel-group .owl-carousel-item { margin-bottom: 10px; }
+.owl-carousel-group { display: grid; grid-gap: 10px 20px; grid-template-columns: 1fr 1fr 1fr 1fr; }
 .owl-carousel-group-tmp { width: 0px; height: 0px; overflow: hidden; }
 .owl-carousel-item { display: flex; flex-direction: column; gap: 5px; width: 100%; }
 .owl-carousel-item-label { display: flex; align-items: center; gap: 5px; padding: 3px 10px; font-size: var(--font-small); font-weight: var(--font-bold-pop); border: 1px solid rgb(var(--border-color)); border-radius: 100px; background-color: rgb(var(--mono)); }
 .owl-carousel-item-label .string { color: var(--font-color); }
 .owl-carousel-thumbnail { position: relative; }
 .owl-carousel-thumbnail-image img { width: 100%; border-radius: 10px; }
+.owl-carousel-thumbnail-rating { font-size: 12px; color: yellow; position: absolute; top: 10px; left: 10px; }
 .owl-carousel-thumbnail-flag { display: flex; gap: 5px; position: absolute; top: 10px; right: 10px; }
 .owl-carousel-thumbnail-flag img { height: 16px; border-radius: 5px; }
-.owl-carousel-thumbnail-rating { font-size: 12px; color: yellow; position: absolute; top: 10px; left: 10px; }
 .owl-carousel-thumbnail-info { display: flex; flex-direction: column; gap: 10px; position: absolute; bottom: 50px; left: 10px; }
 .owl-carousel-thumbnail-info-title { display: flex; gap: 2px; }
 .owl-carousel-thumbnail-info-title > div { background-color: rgba(255,255,255,0.9); }
 .owl-carousel-thumbnail-info-title > p { font-weight: bold; padding: 10px; color: #333333; background-color: rgba(255,255,255,0.9); }
 .owl-carousel-thumbnail-info-button { display: flex; }
-.owl-carousel-thumbnail-country { position: absolute; top: 10px; right: 10px; }
-.owl-carousel-thumbnail-country img { height: 16px; border-radius: 6px; }
 .owl-carousel-thumbnail-video-quality { font-size: 10px; font-weight: 900; padding: 2px 6px; border-radius: 5px; color: #333333; background-color: #ffffff; position: absolute; bottom: 10px; left: 10px; }
 .owl-carousel-thumbnail-video-length { font-size: 10px; font-weight: 500; padding: 2px 6px; border-radius: 5px; color: #333333; background-color: #ffffff; position: absolute; bottom: 10px; right: 10px; }
 .owl-carousel-title { font-size: var(--font-small); font-weight: var(--font-bold-pop); }
