@@ -91,7 +91,7 @@ function owl_carousel_odbc (context) {
 						}
 					}
 				}
-			context ();
+			if (context) context ();
 			}
 		});
 	}
