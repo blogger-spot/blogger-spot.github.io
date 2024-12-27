@@ -55,16 +55,17 @@ function owl_carousel_group (element, reference, option, item) {
 	for (var i in tmp) {
 		var child = [];
 		tmp [i].forEach (function (e) {
-			var permalink = $ (e).attr ('permalink').toString ();
+			var permalink = $ (e).attr ('permalink');
 			var html = $ (e).html ();
 			var odbc = $.odbc [permalink];
 			if (odbc) {
-				if (odbc.prop.rating) html = html.split ('<div class="owl-carousel-thumbnail-rating"></div>').join ("<div class='owl-carousel-thumbnail-rating'>" + (("<span class='icon:material'>star</span>").repeat (odbc.prop.rating)) + "</div>");
-				if (odbc.country) if (odbc.country.length) { var country = []; for (var i in odbc.country) country.push ("<img src='https://blogger-spot.github.io/image/flag/" + odbc.country [i] + ".jpg'/>"); html = html.split ('<div class="owl-carousel-thumbnail-country"></div>').join ("<div class='owl-carousel-thumbnail-country'>" + country.join ('') + "</div>"); }
-				if (odbc.video.quality) html = html.split ('<div class="owl-carousel-thumbnail-video-quality"></div>').join ("<div class='owl-carousel-thumbnail-video-quality'>" + odbc.video.quality + "</div>");
-				if (odbc.video.length) html = html.split ('<div class="owl-carousel-thumbnail-video-length"></div>').join ("<div class='owl-carousel-thumbnail-video-length'>" + odbc.video.length + "</div>");
-				console.log (html)
+				if (odbc.prop.rating) html = html.split ('<div class="owl-carousel-thumbnail-rating"></div>').join ("<div class='owl-carousel-thumbnail-rating'>" + (("<span class='icon:material'>star</span>").repeat (odbc.prop.rating)) + "</div>"); else html = html.split ('<div class="owl-carousel-thumbnail-rating"></div>').join ("");
+				if (odbc.country && odbc.country.length) { var country = []; for (var i in odbc.country) country.push ("<img src='https://blogger-spot.github.io/image/flag/" + odbc.country [i] + ".jpg'/>"); html = html.split ('<div class="owl-carousel-thumbnail-country"></div>').join ("<div class='owl-carousel-thumbnail-country'>" + country.join ('') + "</div>"); } else html = html.split ('<div class="owl-carousel-thumbnail-country"></div>').join ("");
+				if (odbc.video.quality) html = html.split ('<div class="owl-carousel-thumbnail-video-quality"></div>').join ("<div class='owl-carousel-thumbnail-video-quality'>" + odbc.video.quality + "</div>"); else html = html.split ('<div class="owl-carousel-thumbnail-video-quality"></div>').join ("");
+				if (odbc.video.length) html = html.split ('<div class="owl-carousel-thumbnail-video-length"></div>').join ("<div class='owl-carousel-thumbnail-video-length'>" + odbc.video.length + "</div>"); else html = html.split ('<div class="owl-carousel-thumbnail-video-length"></div>').join ("");
 				}
+			html = html.split ('<div thumbnail="' + permalink + '"></div>').join ("");
+			html = html.split ('<div post="' + permalink + '"></div>').join ("");
 			child.push ("<div class='owl-carousel-item' permalink='" + permalink + "'>" + html + "</div>");
 			});
 		group.push ("<div class='owl-carousel-group'>" + child.join ('') + "</div>");
@@ -72,7 +73,7 @@ function owl_carousel_group (element, reference, option, item) {
 	$ (element).hide ();
 	var group_element = element + '-group';
 	$ (group_element).html (group.join (''));
-	owl_carousel (group_element, '#activity', {gap: 20, timeout: 30000, play: 'auto', nav: false, responsive: {0: {items: 1}, 1000: {items: 1}}});
+	owl_carousel (group_element, reference, {gap: 20, timeout: 30000, play: 'auto', nav: false, responsive: {0: {items: 1}, 1000: {items: 1}}});
 	}
 
 function owl_carousel_odbc (context) {
