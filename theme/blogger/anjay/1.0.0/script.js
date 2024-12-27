@@ -39,6 +39,8 @@ function owl_carousel (element, reference, option) {
 	}
 
 function owl_carousel_group (element, reference, option, item) {
+	option = option || {group: {}};
+	option.group = option.group || {};
 	var data = $ (element).children ();
 	var tmp = {};
 	var group = [];
@@ -68,7 +70,7 @@ function owl_carousel_group (element, reference, option, item) {
 			html = html.split ('<div post="' + permalink + '"></div>').join ("");
 			child.push ("<div class='owl-carousel-item' permalink='" + permalink + "'>" + html + "</div>");
 			});
-		group.push ("<div class='owl-carousel-group'>" + child.join ('') + "</div>");
+		group.push ("<div class='" + (option.group.css || "owl-carousel-group") + "'>" + child.join ('') + "</div>");
 		}
 	$ (element).hide ();
 	var group_element = element + '-group';
