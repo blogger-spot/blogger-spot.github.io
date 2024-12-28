@@ -347,7 +347,7 @@ button:focus > section { display: flex; }
 [class*='icon-variant:line'] { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
 
 .owl-carousel-container { display: flex; }
-.owl-carousel-group { display: grid; grid-gap: 10px 20px; grid-template-columns: 1fr 1fr 1fr 1fr; }
+.owl-carousel-group { display: grid; grid-gap: 15px 10px; grid-template-columns: 1fr 1fr 1fr 1fr; }
 .owl-carousel-group-tmp { width: 0px; height: 0px; overflow: hidden; }
 .owl-carousel-item { display: flex; flex-direction: column; gap: 5px; width: 100%; }
 .owl-carousel-item-label { display: flex; align-items: center; gap: 5px; padding: 3px 10px; font-size: var(--font-small); font-weight: var(--font-bold-pop); border: 1px solid rgb(var(--border-color)); border-radius: 100px; background-color: rgb(var(--mono)); }
