@@ -1,0 +1,80 @@
+[class*='font-face:attribution'] { font-family: 'Dank Mono'; }
+[class*='font-face:logo'] { font-family: 'Rubik Puddles'; }
+
+[class*='header:size'] { width: var(--header-size); }
+[class*='navigation:size'] { width: var(--navigation-size); }
+[class*='menu:size'] { width: var(--menu-size); }
+[class*='side:size'] { width: var(--side-size); }
+
+[class*='margin:string'] {}
+[class*='margin:icon'] { margin-top: 5px; }
+[class*='margin-small:icon'] { margin-top: 2px; }
+
+[class*='a:logo'] { display: flex; align-items: center; gap: 10px; color: var(--font-color); }
+[class*='a:logo'] > img { height: 40px; }
+[class*='a:logo'] > div.container { display: flex; flex-direction: column; }
+[class*='a:logo'] > div.container > p.title { font-weight: var(--font-weight); }
+[class*='a:logo'] > div.container > p.description { font-size: var(--font-small); font-weight: var(--font-bold-pop); color: var(--font-color); }
+
+[class*='button:s'] { display: flex; align-items: center; gap: 10px; padding: 10px 20px; border-radius: 100px; font-weight: bold; color: white; background-color: #EA4335; }
+[class*='button:s']:visited { color: white; }
+[class*='button:s']:hover { color: #333333; background-color: rgb(var(--mono)); }
+[class*='button:icon'] { position: relative; padding: 10px; border: none; border-radius: 6px; background-color: transparent; }
+[class*='button:icon'] > section { border-radius: 6px; background-color: var(--background-color); }
+[class*='button:icon']:hover { background-color: rgb(var(--mono)); }
+[class*='button:icon']:focus { background-color: rgb(var(--mono)); }
+[id='menu:toggle'], [id='menu:toggle']:hover, [id='menu:toggle']:focus { background-color: transparent; }
+[id='button-close:search'], [id='button-close:search']:hover, [id='button-close:search']:focus { background-color: transparent; }
+
+#app { display: flex; flex-direction: column; width: 100%; height: 100%; }
+#app > header { height: var(--header-size); }
+#app > header > [id='search:float'] { display: none; align-items: center; height: var(--header-size); }
+#app > header > div#header { display: flex; align-items: center; position: fixed; top: 0px; width: 100%; height: var(--header-size); padding: var(--padding-horizontal); background-color: var(--header-color); z-index: 30; }
+#nav { display: flex; align-items: center; }
+#navigation { display: flex; align-items: center; gap: 5px; }
+#more { display: none; align-items: center; gap: 5px; }
+#search { display: flex; flex-grow: 1; align-items: center; justify-content: center; gap: 10px; }
+#search > [class*='button:icon'] { width: var(--form-search-size); height: var(--form-search-size); }
+#search > [class*='button:icon'] > [class*='icon:container'] { justify-content: center; }
+#search input { font-size: var(--font-medium); width: 300px; height: var(--form-search-size); padding: 0px 10px; }
+#search button.form-search-submit { display: flex; align-items: center; justify-content: center; font-size: var(--font-large); width: var(--form-search-size); height: var(--form-search-size); border-top-right-radius: 100px; border-bottom-right-radius: 100px; background-color: rgb(var(--mono)); }
+#search button.form-search-option { display: flex; flex-direction: column; justify-content: center; height: var(--form-search-size); padding: 0px 30px; border-top-left-radius: 6px; border-bottom-left-radius: 6px; background-color: rgb(var(--mono)); }
+#search button.form-search-option .label { font-size: var(--font-small); color: rgb(var(--green-pop)); }
+#search button.form-search-option .value { color: rgb(var(--blue-pop)); }
+#search button.form-search-option:hover { background-color: rgb(var(--mono-pop)); }
+#app > main { display: flex; position: relative; }
+#menu { display: flex; flex-direction: column; gap: 10px; padding: 10px 0px; min-width: var(--menu-size); z-index: 20; }
+#menu > menu {}
+#menu > menu > .title { font-size: var(--font-medium); font-weight: var(--font-bold); padding: 5px 20px; }
+#menu > menu > ul { padding: 0px 10px; }
+#menu > menu > ul li { display: flex; align-items: center; border-radius: 6px; padding: 0px 10px; }
+#menu > menu > ul li:hover { background-color: rgb(var(--mono)); }
+#menu > menu > ul li a { display: flex; flex-grow: 1; align-items: center; gap: 10px; padding: 10px 0px; font-weight: var(--font-bold-pop); color: var(--font-color); }
+#activity { display: flex; flex-direction: column; flex-grow: 1; z-index: 10; }
+#side { min-width: var(--side-size); }
+#app > main > footer {}
+[id='main:footer'] { display: flex; gap: 10px; padding: 10px; }
+[id='main:footer'] > menu { display: flex; gap: 10px; }
+[id='main:footer'] > menu > .--left { width: 150px; }
+[id='main:footer'] > menu > .--right { width: 200px; }
+[id='main:footer'] > menu > * > ul {}
+[id='main:footer'] > menu > * > ul li { display: flex; align-items: center; border-radius: 6px; padding: 0px 10px; }
+[id='main:footer'] > menu > * > ul li:hover { background-color: rgb(var(--mono)); }
+[id='main:footer'] > menu > * > ul li a { display: flex; flex-grow: 1; align-items: center; gap: 10px; padding: 10px 0px; font-weight: var(--font-bold-pop); color: var(--font-color); }
+#app > footer { display: flex; flex-direction: column; padding: 10px; }
+
+.computer [id='main:footer'] .space { width: 50px; }
+.phone [id='a:logo'] { flex-grow: 1; }
+.phone #nav { display: flex; }
+.phone #navigation { display: none; }
+.phone #more { display: flex; }
+.phone #search { display: none; }
+.phone #menu { display: none; position: fixed; top: 65px; width: var(--menu-size); height: calc(100vh - 65px); overflow-y: scroll; background-color: var(--background-color); box-shadow: 0px 1px 2px 0px rgba(var(--box-shadow), 0.3), 0px 1px 3px 1px rgba(var(--box-shadow), 0.15); }
+.phone #side { display: none; }
+.phone [id='main:footer'] > menu > * { width: 100%; }
+.phone [id='main:footer'] { flex-direction: column; }
+.phone [id='main:footer'] > menu { flex-direction: column; }
+.phone [id='main:footer'] .space { display: none; }
+
+[class*='computer:screen'] { display: none; } .computer [class*='computer:screen'] { display: block; }
+[class*='phone:screen'] { display: none; } .phone [class*='phone:screen'] { display: block; }
