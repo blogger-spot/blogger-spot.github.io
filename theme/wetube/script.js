@@ -139,3 +139,16 @@ function theme_mode_set (mode) {
 	if (mode === 'default') $ ('#theme-mode-icon').css ('color', '#61aeef').html ('toggle_off');
 	if (mode === 'night') $ ('#theme-mode-icon').css ('color', '#98c379').html ('toggle_on');
 	}
+
+function video_player (direct_link, video, overlay_timeout) {
+	$ ("[id='player:overlay']").click (function (element) {
+		$ ("[id='player:overlay']").hide ();
+		window.open (direct_link, "_blank");
+		setTimeout (function () { $ ("[id='player:overlay']").show (); }, (60000 * (overlay_timeout || 3)));
+		});
+	setTimeout (function () {
+		var height = ($ ("#player").width () / 16) * 9;
+		$ ("[id='player:overlay']").css ("width", "100%").css ("height", height + "px");
+		$ ("[id='player:frame']").css ("width", "100%").css ("height", height + "px").attr ("src", video.embed_url);
+		}, 1000);
+	}
