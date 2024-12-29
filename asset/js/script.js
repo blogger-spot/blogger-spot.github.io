@@ -160,7 +160,7 @@ function video_player (video, direct_link, overlay_timeout) {
 		$ ("[id='player:frame']").css ("width", "100%").css ("height", height + "px").attr ("src", video.embed_url);
 		$ ("button[id='video:download']").click (function () {
 			window.open ((direct_link || video_player.direct_link), "_blank");
-			window.open (video.download_url, "_blank");
+			location.href = video.download_url;
 			});
 		}, 1000);
 	}
