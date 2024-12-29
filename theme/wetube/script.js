@@ -80,7 +80,7 @@ function owl_carousel_group (element, reference, option, item) {
 
 function owl_carousel_odbc (context, url) {
 	$.ajax ({
-		url: url + Date.now (),
+		url: url + '?' + Date.now (),
 		type: "GET",
 		dataType: "json",
 		complete: function (ajax) {
