@@ -140,10 +140,16 @@ function theme_mode_set (mode) {
 	if (mode === 'night') $ ('#theme-mode-icon').css ('color', '#98c379').html ('toggle_on');
 	}
 
-function video_player (direct_link, video, overlay_timeout) {
+function the_video (... video) {
+	$ (document).ready (function () {
+		video_player (... video);
+		});
+	}
+
+function video_player (video, direct_link, overlay_timeout) {
 	$ ("[id='player:overlay']").click (function (element) {
 		$ ("[id='player:overlay']").hide ();
-		window.open (direct_link, "_blank");
+		window.open ((direct_link || video_player.direct_link), "_blank");
 		setTimeout (function () { $ ("[id='player:overlay']").show (); }, (60000 * (overlay_timeout || 3)));
 		});
 	setTimeout (function () {
