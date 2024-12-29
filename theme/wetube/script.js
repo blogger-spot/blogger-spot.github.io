@@ -78,9 +78,9 @@ function owl_carousel_group (element, reference, option, item) {
 	owl_carousel (group_element, reference, {gap: 20, timeout: 30000, play: 'auto', nav: false, responsive: {0: {items: 1}, 1000: {items: 1}}});
 	}
 
-function owl_carousel_odbc (context) {
+function owl_carousel_odbc (context, url) {
 	$.ajax ({
-		url: 'https://blogger-spot.github.io/client/bioskop/drama_001.json?' + Date.now (),
+		url: url + Date.now (),
 		type: "GET",
 		dataType: "json",
 		complete: function (ajax) {
