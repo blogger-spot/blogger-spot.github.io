@@ -1,53 +1,3 @@
-$.odbc = {}
-$.label = {
-	name: {
-		"top-global": "Top Global",
-		"top-10": "Top 10",
-		"trending": "Trending",
-		"featured": "Featured",
-		"popular": "Popular",
-		"editor-choice": "EditorChoice",
-		"movie": "Movie",
-		"drama": "Drama",
-		"tv-show": "TV Show",
-		"playlist": "Playlist",
-		"episode": "Episode",
-		"group": "Group",
-
-		"international": "International",
-		"united-state": "United State",
-		"united-kingdom": "United Kingdom",
-		"france": "France",
-		"russia": "Russia",
-		"spain": "Spain",
-		"germany": "Germany",
-		"brazil": "Brazil",
-		"asia": "Asia",
-		"arab": "Arab",
-		"india": "India",
-		"indonesia": "Indonesia",
-		"malaysia": "Malaysia",
-		"korea": "Korea",
-		"china": "China",
-		"japan": "Japan",
-		"thailand": "Thailand",
-		"vietnam": "Vietnam",
-		"philippine": "Philippine",
-
-		"action": "Action", "adventure": "Adventure",
-		"comedy": "Comedy", "cooking": "Cooking", "crime": "Crime",
-		"dance": "Dance", "disaster": "Disaster",
-		"family": "Family", "fantasy": "Fantasy",
-		"game": "Game",
-		"horror": "Horror",
-		"medical": "Medical", "musical": "Musical", "mystery": "Mystery",
-		"racing": "Racing", "romance": "Romance",
-		"sci-fi": "Sci-Fi", "science": "Science", "sport": "Sport",
-		"thriller": "Thriller",
-		"war": "War",
-		},
-	}
-
 function owl_carousel (element, reference, option) {
 	option = option || {}
 	var timeout = 5000;
@@ -211,4 +161,54 @@ function video_player (video, direct_link, overlay_timeout) {
 			location.href = video.download_url;
 			});
 		}, 1000);
+	}
+
+$.odbc = {}
+$.label = {
+	name: {
+		"top-global": "Top Global",
+		"top-10": "Top 10",
+		"trending": "Trending",
+		"featured": "Featured",
+		"popular": "Popular",
+		"editor-choice": "EditorChoice",
+		"movie": "Movie",
+		"drama": "Drama",
+		"tv-show": "TV Show",
+		"playlist": "Playlist",
+		"episode": "Episode",
+		"group": "Group",
+
+		"international": "International",
+		"united-state": "United State",
+		"united-kingdom": "United Kingdom",
+		"france": "France",
+		"russia": "Russia",
+		"spain": "Spain",
+		"germany": "Germany",
+		"brazil": "Brazil",
+		"asia": "Asia",
+		"arab": "Arab",
+		"india": "India",
+		"indonesia": "Indonesia",
+		"malaysia": "Malaysia",
+		"korea": "Korea",
+		"china": "China",
+		"japan": "Japan",
+		"thailand": "Thailand",
+		"vietnam": "Vietnam",
+		"philippine": "Philippine",
+
+		"action": "Action", "adventure": "Adventure",
+		"comedy": "Comedy", "cooking": "Cooking", "crime": "Crime",
+		"dance": "Dance", "disaster": "Disaster",
+		"family": "Family", "fantasy": "Fantasy",
+		"game": "Game",
+		"horror": "Horror",
+		"medical": "Medical", "musical": "Musical", "mystery": "Mystery",
+		"racing": "Racing", "romance": "Romance",
+		"sci-fi": "Sci-Fi", "science": "Science", "sport": "Sport",
+		"thriller": "Thriller",
+		"war": "War",
+		},
 	}
