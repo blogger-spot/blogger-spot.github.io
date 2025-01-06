@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html class='notranslate' translate='no' expr:lang='data:blog.locale' b:css='false' b:js='true' b:templateVersion='1.0.0' b:layoutsVersion='1' b:defaultwidgetversion='1' b:responsive='true' b:templateUrl='indie.xml' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'><b:attr name='xmlns' value=''/><b:attr name='xmlns:b' value=''/><b:attr name='xmlns:expr' value=''/><b:attr name='xmlns:data' value=''/>&lt;head&gt;
+<title><b:if cond='data:view.isPost or data:view.isPage'><data:blog.pageName.escaped/> | Bioskop (Movie, Drama, TV SHow)<b:elseif cond='data:view.isHomepage'/>Bioskop | Movie, Drama, TV SHow<b:elseif cond='data:view.isError'/>Error 404 (Not Found) | Bioskop (Movie, Drama, TV SHow)<b:else/>Bioskop | Movie, Drama, TV SHow</b:if></title>
+<meta charset='UTF-8'/>
+<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'/>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+<meta name='theme-color' content='#666666'/>
+<meta name='msapplication-navbutton-color' content='#666666'/>
+<meta name='author' expr:content='data:blog.title'/>
+<meta name='generator' content='Blogger'/>
+<meta name='keywords' content='keyword'/>
+<meta name='robots' content='index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large'/>
+<meta name='description' expr:content='data:blog.metaDescription'/>
+<meta name='google' content='notranslate'/>
+<meta name='googlebot' content='notranslate'/>
+<link rel='canonical' expr:href='data:blog.canonicalUrl'/>
+<link rel='icon' type='image/x-icon' expr:href='data:blog.canonicalHomepageUrl + "favicon.ico"'/>
+<link rel='dns-prefetch' href='https://1.bp.blogspot.com'/>
+<link rel='dns-prefetch' href='https://2.bp.blogspot.com'/>
+<link rel='dns-prefetch' href='https://3.bp.blogspot.com'/>
+<link rel='dns-prefetch' href='https://4.bp.blogspot.com'/>
+<link rel='dns-prefetch' href='https://www.google-analytics.com'/>
+<link rel='dns-prefetch' href='https://www.googletagmanager.com'/>
+<link rel='preconnect' href='https://www.blogger.com' crossorigin='anonymous'/>
+<link rel='preconnect' href='https://blogger.googleusercontent.com' crossorigin='crossorigin'/>
+<link rel='preconnect' href='https://resources.blogblog.com' crossorigin='crossorigin'/>
+<link rel='preconnect' href='https://blogger-spot.github.io' crossorigin='crossorigin'/>
+<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin='crossorigin'/>
+<link rel='preconnect' href='https://fonts.googleapis.com' crossorigin='crossorigin'/>
+
+<b:if cond='data:blog.pageType == "item"'><link rel='alternate' type='application/atom+xml' expr:href='data:blog.canonicalHomepageUrl + "feeds/" + data:blog.postId + "/comments/default"' expr:title='data:blog.title + " - Atom"'/></b:if>
+<link rel='alternate' type='application/atom+xml' expr:href='data:blog.canonicalHomepageUrl + "feeds/posts/default"' expr:title='data:blog.title + " - Atom"'/>
+<link rel='alternate' type='application/rss+xml' expr:href='data:blog.canonicalHomepageUrl + "feeds/posts/default?alt=rss"' expr:title='data:blog.title + " - RSS"'/>
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'/>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css'/>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200'/>
+<link rel="stylesheet" href='https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200'/>
+<link rel="stylesheet" href='https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200'/>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap'/>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Rubik+Puddles&amp;display=swap'/>
+<link rel='stylesheet' href='https://blogger-spot.github.io/theme/bioskop/var.css'/>
+<link rel='stylesheet' href='https://blogger-spot.github.io/theme/bioskop/skin.css'/>
+<link rel='stylesheet' href='https://blogger-spot.github.io/asset/font/dank.css'/>
+<link rel='stylesheet' href='https://blogger-spot.github.io/asset/css/style.css'/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js'/>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'/>
+<script src="https://unpkg.com/axios@1.7.9/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue@3.5.13/dist/vue.global.prod.js"></script>
+<script src="https://unpkg.com/vue-router@4.5.0/dist/vue-router.global.prod.js"></script>
+<script src="https://blogger-spot.github.io/src/prototype.js"></script>
+<script src="https://blogger-spot.github.io/src/vue/core.js"></script>
+<script src="https://blogger-spot.github.io/src/vue/router.js"></script>
+<script src="https://blogger-spot.github.io/src/vue/theme/default/component.js"></script>
+<script src="https://blogger-spot.github.io/client/001.js"></script>
+<b:skin><![CDATA[
+.adsterra { -display: none; }
+.adsterra iframe { border-radius: 10px; }
+.adsterra [class*='__title'] { font-size: 10px !important; font-weight: 500 !important; }
+.adsterra [class*='__img'] { border-radius: 10px; }
+.adsterra [class*='el-btn'] { border-radius: 100%; margin-top: 10px; margin-right: 10px; }
+.computer .adsterra [class*='__title'] { min-height: 24px !important; }
+.computer .adsterra [class*='__bn-container'] { padding-bottom: 0px !important; }
+.adsterra [class*='phone:screen'] { padding-bottom: 5px; }
+* {}]]></b:skin>
+&lt;/head&gt;&lt;!--<head/>--&gt;
+<body expr:class='data:blog.pageType'>
+	<div id="wrap">
+		<div id="wrapper">
+			<div id="container">
+				<router:view id="vue"/>
+			</div>
+		</div>
+	</div>
+	<script type='text/javascript'>
+		//
+	</script>
+</body>
+</html>

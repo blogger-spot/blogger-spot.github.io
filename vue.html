@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html class="notranslate" translate="no" lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta name="theme-color" content="#666666"/>
+		<meta name="msapplication-navbutton-color" content="#666666"/>
+		<meta name="author" expr:content="data:blog.title"/>
+		<meta name="generator" content="Blogger"/>
+		<meta name="keywords" content="keyword"/>
+		<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+		<meta name="description" expr:content="data:blog.metaDescription"/>
+		<meta name="google" content="notranslate"/>
+		<meta name="googlebot" content="notranslate"/>
+		<link rel="canonical" expr:href="data:blog.canonicalUrl"/>
+		<link rel="icon" type="image/x-icon" expr:href="data:blog.canonicalHomepageUrl + 'favicon.ico'"/>
+		<link rel="dns-prefetch" href="https://1.bp.blogspot.com"/>
+		<link rel="dns-prefetch" href="https://2.bp.blogspot.com"/>
+		<link rel="dns-prefetch" href="https://3.bp.blogspot.com"/>
+		<link rel="dns-prefetch" href="https://4.bp.blogspot.com"/>
+		<link rel="dns-prefetch" href="https://www.google-analytics.com"/>
+		<link rel="dns-prefetch" href="https://www.googletagmanager.com"/>
+		<link rel="preconnect" href="https://www.blogger.com" crossorigin="anonymous"/>
+		<link rel="preconnect" href="https://blogger.googleusercontent.com" crossorigin="crossorigin"/>
+		<link rel="preconnect" href="https://resources.blogblog.com" crossorigin="crossorigin"/>
+		<link rel="preconnect" href="https://blogger-spot.github.io" crossorigin="crossorigin"/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&amp;display=swap"/>
+		<link rel="stylesheet" href="theme/bioskop/var.css"/>
+		<link rel="stylesheet" href="theme/bioskop/skin.css"/>
+		<link rel="stylesheet" href="asset/font/dank.css"/>
+		<link rel="stylesheet" href="asset/css/style.css"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+		<script src="https://unpkg.com/axios@1.7.9/dist/axios.min.js"></script>
+		<script src="https://unpkg.com/vue@3.5.13/dist/vue.global.prod.js"></script>
+		<script src="https://unpkg.com/vue-router@4.5.0/dist/vue-router.global.prod.js"></script>
+		<script src="src/prototype.js"></script>
+		<script src="src/vue/core.js"></script>
+		<script src="src/vue/router.js"></script>
+		<script src="src/vue/theme/default/component.js"></script>
+		<script src="client/001.js"></script>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="wrapper">
+				<div id="container">
+					<router:view id="vue"/>
+				</div>
+			</div>
+		</div>
+		<script>
+			$ (document).ready (function () {
+				$$$.body_class ()
+				})
+			vue.post = []
+			vue.page = []
+			vue.taxonomy = []
+			vue.router.data = [
+				{"id": null, "type": "post", "permalink": {"slug": "", "url": "", "year": "", "month": "", "day": null}},
+				]
+			vue.app.router = vue.router.create ([
+				{name: "index", path: "/", template: vue.router ["/"]},
+				{name: "post", path: "/:year/:month/:slug.html", template: vue.router ["/"]},
+				{name: "page", path: "/p/:slug.html", template: vue.router ["/"]},
+				{name: "*", path: "/:slug(.*)+", template: vue.router ["try_catch"]},
+				])
+			vue.partial (vue.app)
+			vue.app.use (vue.app.router)
+			vue.app.mount ("#container")
+		</script>
+	</body>
+</html>
